@@ -1,0 +1,19 @@
+src/**/*-test.js
+# 忽略目录
+build/
+dist/
+demo/
+bin/
+config/
+test/
+lib/
+files/
+src/lib.js
+# node 覆盖率文件
+coverage/
+
+node_modules/
+
+# 忽略文件
+**/*.min.js
+**/*-min.js
