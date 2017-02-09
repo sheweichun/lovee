@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -208,7 +208,10 @@ function supportCORS() {
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -217,7 +220,7 @@ function supportCORS() {
 
 var _util = __webpack_require__(0);
 
-var _lovee = __webpack_require__(7);
+var _lovee = __webpack_require__(11);
 
 var _lovee2 = _interopRequireDefault(_lovee);
 
@@ -231,7 +234,7 @@ var merge = Object.assign,
   type: 'canvas'
 };
 
-module.exports = function (container, render, options) {
+module.exports = function (container, render, options, cb) {
   // invariant(container, 'container is undefined');
   // invariant(render, 'render is undefined');
   var $containers = sel(container),
@@ -243,12 +246,16 @@ module.exports = function (container, render, options) {
   if ($containers instanceof HTMLElement) {
     var $image = image instanceof HTMLElement ? image : $containers.querySelector(image);
     if (!$image) return;
-    new _lovee2.default($containers, $image, options).parse(render);
+    new _lovee2.default($containers, $image, options).parse(render, function (colors) {
+      cb($containers, colors);
+    });
   } else {
     forEach.call($containers, function ($container) {
       var $image = image instanceof HTMLElement ? image : $container.querySelector(image);
       if (!$image) return;
-      new _lovee2.default($container, $image, options).parse(render);
+      new _lovee2.default($container, $image, options).parse(render, function (colors) {
+        cb($container, colors);
+      });
       // results.push(
       //
       // );
@@ -259,10 +266,10 @@ module.exports = function (container, render, options) {
 };
 
 /***/ },
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -318,10 +325,11 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ },
-/* 7 */
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -335,7 +343,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var invariant = __webpack_require__(6);
+var invariant = __webpack_require__(9);
 
 var Lovee = function () {
   function Lovee(container, image, options) {
@@ -360,7 +368,9 @@ var Lovee = function () {
 exports.default = Lovee;
 
 /***/ },
-/* 8 */
+/* 12 */,
+/* 13 */,
+/* 14 */
 /***/ function(module, exports) {
 
 // shim for using process in browser
@@ -546,10 +556,12 @@ process.umask = function() { return 0; };
 
 
 /***/ },
-/* 9 */
+/* 15 */,
+/* 16 */,
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(5);
 
 
 /***/ }

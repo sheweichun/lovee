@@ -71,11 +71,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports) {
 
 "use strict";
@@ -207,7 +208,8 @@ function supportCORS() {
 }
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports) {
 
 "use strict";
@@ -252,9 +254,16 @@ var BaseRender = function () {
 exports.default = BaseRender;
 
 /***/ },
-/* 2 */,
-/* 3 */,
-/* 4 */
+
+/***/ 19:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(7);
+
+
+/***/ },
+
+/***/ 7:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -383,20 +392,8 @@ module.exports = function (_BaseRender) {
   return CanvasRender;
 }(_base2.default);
 
-/***/ },
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(4);
-
-
 /***/ }
-/******/ ]);
+
+/******/ });
 });
 //# sourceMappingURL=LoveeImage.js.map

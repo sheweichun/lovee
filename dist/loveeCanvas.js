@@ -71,11 +71,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports) {
 
 "use strict";
@@ -207,7 +208,8 @@ function supportCORS() {
 }
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports) {
 
 "use strict";
@@ -252,8 +254,16 @@ var BaseRender = function () {
 exports.default = BaseRender;
 
 /***/ },
-/* 2 */,
-/* 3 */
+
+/***/ 18:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(6);
+
+
+/***/ },
+
+/***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -429,20 +439,8 @@ module.exports = function (_BaseRender) {
   return CanvasRender;
 }(_base2.default);
 
-/***/ },
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(3);
-
-
 /***/ }
-/******/ ]);
+
+/******/ });
 });
 //# sourceMappingURL=LoveeCanvas.js.map
