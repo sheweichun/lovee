@@ -14,7 +14,6 @@ if (isProd) {
   libTarget = 'umd';
   entry = {
     Lovee: ['./' + dirName + '/index'],
-    'example/index': ['./example/index'],
     LoveeCanvas: ['./src/render/canvas'],
     LoveeImage: ['./src/render/image'],
     LoveeSvg: ['./src/render/svg']
@@ -32,24 +31,18 @@ if (isProd) {
       showFlag = true;
       stream.write('当前打包进度 :' + parseInt((percentage * 100).toFixed(2)) + '%,' + msg);
     }),
-    // ,new webpack.optimize.UglifyJsPlugin({
-		// 	  compress: {
-		// 	    unused: true,
-		// 	    dead_code: true,
-		// 	    warnings: false
-		// 	  },
-		// 	  mangle: {
-		// 	    except: ['$', 'exports', 'require']
-		// 	  },
-		// 	  output: {
-		// 	    ascii_only: true
-		// 	  }
-    // })
-    new HtmlWebpackPlugin({
-      filename: 'example/index.html',
-      template: 'example/index.html',
-      inject: 'body',
-      chunks: ['example/index']
+    new webpack.optimize.UglifyJsPlugin({
+			  compress: {
+			    unused: true,
+			    dead_code: true,
+			    warnings: false
+			  },
+			  mangle: {
+			    except: ['$', 'exports', 'require']
+			  },
+			  output: {
+			    ascii_only: true
+			  }
     })
   ];
   if (process.env.WEBPACK_BUNDLE) {

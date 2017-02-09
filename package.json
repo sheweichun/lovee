@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
+    "demo": "NODE_ENV=production webpack --config webpack.config.demo.js",
     "lib": "./node_modules/.bin/babel src -d lib",
     "bundle": "./node_modules/.bin/eslint --fix --quiet src && NODE_ENV=production WEBPACK_BUNDLE=1 ./node_modules/.bin/webpack && cp -r build/* demo",
     "start": "node bin/start.js",

@@ -5,71 +5,58 @@ var showFlag = false;
 var stream = process.stderr;
 var isProd = process.env.NODE_ENV === 'production';
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var publicPath = isProd ? './' : '/';
+var publicPath = './';
 var plugins;
-var dirName = 'example';
-if (isProd) {
-  plugins = [
-    new webpack.optimize.OccurrenceOrderPlugin(true),
-    new webpack.NoErrorsPlugin(),
-    new webpack.ProgressPlugin(function handler(percentage, msg) {
-      if (showFlag) {
-        stream.moveCursor(0, 0);
-        stream.clearLine();
-        stream.cursorTo(0);
-      }
-      showFlag = true;
-      stream.write('当前打包进度 :' + parseInt((percentage * 100).toFixed(2)) + '%,' + msg);
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-			  compress: {
-			    unused: true,
-			    dead_code: true,
-			    warnings: false
-			  },
-			  mangle: {
-			    except: ['$', 'exports', 'require']
-			  },
-			  output: {
-			    ascii_only: true
-			  }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'example/index.html',
-      inject: 'body'
-    })
-  ];
-  if (process.env.WEBPACK_BUNDLE) {
-    plugins.push(new BundleAnalyzerPlugin({}));
-  }
-} else {
-  plugins = [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.SourceMapDevToolPlugin({}),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'example/index.html',
-      inject: 'body'
-    })
-  ];
+var entry = {
+  index: ['./example/index']
+};
+plugins = [
+  new webpack.optimize.OccurrenceOrderPlugin(true),
+  new webpack.NoErrorsPlugin(),
+  new webpack.ProgressPlugin(function handler(percentage, msg) {
+    if (showFlag) {
+      stream.moveCursor(0, 0);
+      stream.clearLine();
+      stream.cursorTo(0);
+    }
+    showFlag = true;
+    stream.write('当前打包进度 :' + parseInt((percentage * 100).toFixed(2)) + '%,' + msg);
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      unused: true,
+      dead_code: true,
+      warnings: false
+    },
+    mangle: {
+      except: ['$', 'exports', 'require']
+    },
+    output: {
+      ascii_only: true
+    }
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: 'example/index.html',
+    inject: 'body'
+  })
+];
+if (process.env.WEBPACK_BUNDLE) {
+  plugins.push(new BundleAnalyzerPlugin({}));
 }
 
 module.exports = {
   // click on the name of the option to get to the detailed documentation
   // click on the items with arrows to show more examples / advanced options
 
-  entry: {
-    app: ['./' + dirName + '/index']
-  }, // string | object | array
+  entry: entry, // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
 
   output: {
     // options related how webpack emits results
 
-    path: path.resolve(__dirname, 'dist'), // string
+    path: path.resolve(__dirname, 'demo'), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
 
@@ -77,7 +64,6 @@ module.exports = {
     // the filename template for entry chunks
 
     publicPath: publicPath, // string
-    // the url to the output directory resolved relative to the HTML page
 
     // the type of the exported library
 
