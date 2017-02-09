@@ -15,12 +15,14 @@ window.onload = function() {
   let myframe = document.getElementById('myframe');
   let frameDocument = myframe.contentWindow.document;
   writeIframe(frameDocument, {
-    render: 'LoveeCanvas'
+    render: 'LoveeCanvas',
+    prefix: window.PREFIX || '/'
   });
   let $select = document.querySelector('select');
   $select.addEventListener('change', (e, value) => {
     writeIframe(frameDocument, {
-      render: $select.options[$select.selectedIndex].value
+      render: $select.options[$select.selectedIndex].value,
+      prefix: window.PREFIX || '/'
     });
   });
 

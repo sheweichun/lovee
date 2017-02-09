@@ -27,6 +27,7 @@ function generate(option) {
 }
 
 module.exports = (option) => {
+  const {prefix} = option;
   return `<!doctype html>
   <html>
   <head>
@@ -36,7 +37,7 @@ module.exports = (option) => {
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="/example/styles/index.css" rel="stylesheet">
+    <link href="${prefix}example/styles/index.css" rel="stylesheet">
   </head>
   <style>
   body{
@@ -52,75 +53,75 @@ module.exports = (option) => {
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/wukong.jpg"  alt="" >
+          <img src="${prefix}example/images/wukong.jpg"  alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
           </div>
-          <img src="/example/images/wukong.jpg"  alt="" >
+          <img src="${prefix}example/images/wukong.jpg"  alt="" >
       </div>
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/fulisa.jpg"  alt="" >
+          <img src="${prefix}example/images/fulisa.jpg"  alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
 
           </div>
-          <img src="/example/images/fulisa.jpg"  alt="" >
+          <img src="${prefix}example/images/fulisa.jpg"  alt="" >
       </div>
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/tree.jpg"  alt="" >
+          <img src="${prefix}example/images/tree.jpg"  alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
 
           </div>
-          <img src="/example/images/tree.jpg"  alt="" >
+          <img src="${prefix}example/images/tree.jpg"  alt="" >
       </div>
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/tree2.jpg"  alt="" >
+          <img src="${prefix}example/images/tree2.jpg"  alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
 
           </div>
-          <img src="/example/images/tree2.jpg"  alt="" >
+          <img src="${prefix}example/images/tree2.jpg"  alt="" >
       </div>
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/logo.jpg"  alt="" >
+          <img src="${prefix}example/images/logo.jpg"  alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
 
           </div>
-          <img src="/example/images/logo.jpg"  alt="" >
+          <img src="${prefix}example/images/logo.jpg"  alt="" >
       </div>
       <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >
           <div class="orginBg">
           </div>
-          <img src="/example/images/logo1.jpg" data-limit="3"   alt="" >
+          <img src="${prefix}example/images/logo1.jpg" data-limit="3"   alt="" >
       </div>
       <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >
           <div class="bg">
 
           </div>
-          <img src="/example/images/logo1.jpg" data-limit="3"  alt="" >
+          <img src="${prefix}example/images/logo1.jpg" data-limit="3"  alt="" >
       </div>
 
     </div>
   </body>
-  <script src="/dist/loveeImage.js"></script>
-  <script src="/dist/loveeSvg.js"></script>
-  <script src="/dist/loveeCanvas.js"></script>
-  <script src="/dist/lovee.js"></script>
+  <script src="${prefix}dist/loveeImage.js"></script>
+  <script src="${prefix}dist/loveeSvg.js"></script>
+  <script src="${prefix}dist/loveeCanvas.js"></script>
+  <script src="${prefix}dist/lovee.js"></script>
   <script>
     ${generate(option)}
   </script>

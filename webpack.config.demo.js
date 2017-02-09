@@ -37,7 +37,7 @@ plugins = [
   }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'example/index.html',
+    template: 'example/demo.html',
     inject: 'body'
   })
 ];
