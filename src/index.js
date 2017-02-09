@@ -7,6 +7,7 @@ const merge = (...objarr) => {
       for (let attr in obj) {
         ret[attr] = obj[attr];
       }
+      return ret;
     }, {});
   },
   forEach = Array.prototype.forEach,
