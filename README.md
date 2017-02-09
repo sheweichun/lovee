@@ -52,63 +52,55 @@ lovee need render to generate complementary background,in lovee,it provides thre
 
 ### loveeCanvas
   option should like beblow:
+  * target : `[String|Object]` selector or HTMLElement which will applied background
+  * image : `[String|Object]` image selector or HTMLImageElement
+  * ratio : `[Number]` canvas ratio
+  * limit : `[Number]` calculated colors count
+  * type  : `[String]` '1':linear-gradient , '0':rgba
+  * angle : `[String]`    linear-gradient angle
+  * setText : `[String]` should set color
 
-  | parameter        | type           | descripton  |
-  | ------------- |:-------------:| -----:|
-  | target |String| selector or HTMLElement which will applied background |
-  | image |String| image selector or HTMLImageElement |
-  | ratio      | Number | canvas ratio |
-  | limit      | Number | calculated colors count |
-  | type      | String      |   '1':linear-gradient , '0':rgba |
-  | angle | String     |    linear-gradient angle |
-  | setText | String     |    should set color |
+`example`:
+```
+  import Lovee from 'lovee'
+  import LoveeCanvas from 'lovee/dist/loveeCanvas'
 
-  `example`:
-  ```
-    import Lovee from 'lovee'
-    import LoveeCanvas from 'lovee/dist/loveeCanvas'
+  lovee('.lovee-wrap',LoveeCanvas,{
 
-    lovee('.lovee-wrap',LoveeCanvas,{
-
-    })
-  ```
+  })
+```
   ### loveeSvg
     option should like beblow:
+  * target : `[String|Object]` selector or HTMLElement which will applied background
+  * image : `[String|Object]` image selector or HTMLImageElement
+  * ratio : `[Number]`  svg ratio
 
-  | parameter        | type           | descripton  |
-  | ------------- |:-------------:| -----:|
-  | target |String| selector or HTMLElement which will applied background |
-  | image |String| image selector or HTMLImageElement |
-  | ratio      | Number | svg ratio |
+`example`:
+```
+  import Lovee from 'lovee'
+  import LoveeSvg from 'lovee/dist/loveeSvg'
 
-  `example`:
-  ```
-    import Lovee from 'lovee'
-    import LoveeSvg from 'lovee/dist/loveeSvg'
+  lovee('.lovee-wrap',LoveeSvg,{
 
-    lovee('.lovee-wrap',LoveeSvg,{
-
-    })
-  ```
+  })
+```
 
   ### loveeImage
     option should like beblow:
 
-  | parameter        | type           | descripton  |
-  | ------------- |:-------------:| -----:|
-  | target |String| selector or HTMLElement which will applied background |
-  | image |String| image selector or HTMLImageElement |
-  | type      | String      |   '1':extract left 1px imageData , '0':extract right 1px imageData |
+  * target : `[String|Object]` selector or HTMLElement which will applied background
+  * image : `[String|Object]` image selector or HTMLImageElement
+  * type : `[String]`  '1':extract left 1px imageData , '0':extract right 1px imageData
 
-  `example`:
-  ```
-    import Lovee from 'lovee'
-    import LoveeImage from 'lovee/dist/loveeImage'
+`example`:
+```
+  import Lovee from 'lovee'
+  import LoveeImage from 'lovee/dist/loveeImage'
 
-    lovee('.lovee-wrap',LoveeImage,{
+  lovee('.lovee-wrap',LoveeImage,{
 
-    })
-  ```
+  })
+```
 
 
 ## CORS images
