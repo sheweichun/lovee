@@ -22,19 +22,19 @@ plugins = [
     showFlag = true;
     stream.write('当前打包进度 :' + parseInt((percentage * 100).toFixed(2)) + '%,' + msg);
   }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      unused: true,
-      dead_code: true,
-      warnings: false
-    },
-    mangle: {
-      except: ['$', 'exports', 'require']
-    },
-    output: {
-      ascii_only: true
-    }
-  }),
+  // new webpack.optimize.UglifyJsPlugin({
+  //   compress: {
+  //     unused: true,
+  //     dead_code: true,
+  //     warnings: false
+  //   },
+  //   mangle: {
+  //     except: ['$', 'exports', 'require']
+  //   },
+  //   output: {
+  //     ascii_only: true
+  //   }
+  // }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: 'example/demo.html',

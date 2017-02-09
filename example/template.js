@@ -28,6 +28,7 @@ function generate(option) {
 
 module.exports = (option) => {
   const {prefix} = option;
+  console.log('prefix :', prefix);
   return `<!doctype html>
   <html>
   <head>
