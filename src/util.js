@@ -10,21 +10,21 @@ export function getHtmlElement(obj) {
 }
 
 
-export function getImageByUrl(url) {
-  return new Promise((resolve, reject) => {
-    let img = new Image();
-    img.src = url;
-    if (img.complete) {
-      return resolve(img);
-    }
-    img.onload = () => {
-      resolve(img);
-    };
-    img.onerror = (e) => {
-      reject(e);
-    };
-  });
-}
+// export function getImageByUrl(url) {
+//   return new Promise((resolve, reject) => {
+//     let img = new Image();
+//     img.src = url;
+//     if (img.complete) {
+//       return resolve(img);
+//     }
+//     img.onload = () => {
+//       resolve(img);
+//     };
+//     img.onerror = (e) => {
+//       reject(e);
+//     };
+//   });
+// }
 
 export const toArray = Array.from || (function() {
   var toStr = Object.prototype.toString;

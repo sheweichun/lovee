@@ -6,3 +6,6 @@ mods/.sass-cache/
 .DS_Store
 .idea
 src/
+example/
+bin/
+demo/

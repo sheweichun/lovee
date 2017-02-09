@@ -2,7 +2,13 @@
 // var invariant = require('invariant');
 import {getHtmlElement, getAttribute} from './util';
 import Lovee from './lovee';
-const merge = Object.assign,
+const merge = (...objarr) => {
+    return objarr.reduceRight((ret, obj) => {
+      for (let attr in obj) {
+        ret[attr] = obj[attr];
+      }
+    }, {});
+  },
   forEach = Array.prototype.forEach,
   sel = getHtmlElement,
   defaultOptions = {
