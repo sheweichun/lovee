@@ -47,6 +47,15 @@ module.exports = (option) => {
     background: #fff;
     color: #34495e;
   }
+  @media screen and (max-width: 500px) {
+    .gradient-wrap img{
+      width: 100%;
+      height: auto;
+    }
+    .p4{
+      padding: 2rem;
+    }
+  } 
   </style>
   <body>
     <div class="container center p2 pt4">

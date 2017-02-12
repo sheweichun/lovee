@@ -456,27 +456,27 @@ window.onload = function () {
 var merge = Object.assign;
 
 function obj2Str(obj) {
-    return Object.keys(obj).map(function (key) {
-        return key + ':' + obj[key] + ',';
-    });
+  return Object.keys(obj).map(function (key) {
+    return key + ':' + obj[key] + ',';
+  });
 }
 
 function generate(option) {
-    var render = option.render;
-    var opt = option.option || {};
-    var originOpt = merge({}, opt, {
-        target: '.orginBg'
-    });
-    var hoverOpt = merge({}, opt, {
-        target: '.bg'
-    });
-    return 'Lovee(\'.origin\', ' + render + ', ' + JSON.stringify(originOpt) + ');\n  Lovee(\'.hover\', ' + render + ', ' + JSON.stringify(hoverOpt) + ');';
+  var render = option.render;
+  var opt = option.option || {};
+  var originOpt = merge({}, opt, {
+    target: '.orginBg'
+  });
+  var hoverOpt = merge({}, opt, {
+    target: '.bg'
+  });
+  return 'Lovee(\'.origin\', ' + render + ', ' + JSON.stringify(originOpt) + ');\n  Lovee(\'.hover\', ' + render + ', ' + JSON.stringify(hoverOpt) + ');';
 }
 
 module.exports = function (option) {
-    var prefix = option.prefix;
+  var prefix = option.prefix;
 
-    return '<!doctype html>\n  <html>\n  <head>\n    <meta charset="utf-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <title>lovee</title>\n    <meta name="description" content="">\n    <meta name="viewport" content="width=device-width">\n    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n    <link href="' + prefix + 'example/styles/index.css" rel="stylesheet">\n  </head>\n  <style>\n  body{\n    font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;\n    line-height: 1.65;\n    -webkit-font-smoothing: antialiased;\n    background: #fff;\n    color: #34495e;\n  }\n  </style>\n  <body>\n    <div class="container center p2 pt4">\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/wukong.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n          </div>\n          <img src="' + prefix + 'example/images/wukong.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/fulisa.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/fulisa.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/tree.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/tree.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/tree2.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/tree2.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/logo.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/logo.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/logo1.jpg" data-limit="3"   alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/logo1.jpg" data-limit="3"  alt="" >\n      </div>\n\n    </div>\n  </body>\n  <script src="' + prefix + 'dist/loveeImage.js"></script>\n  <script src="' + prefix + 'dist/loveeSvg.js"></script>\n  <script src="' + prefix + 'dist/loveeCanvas.js"></script>\n  <script src="' + prefix + 'dist/lovee.js"></script>\n  <script>\n    ' + generate(option) + '\n  </script>\n  </html>\n  ';
+  return '<!doctype html>\n  <html>\n  <head>\n    <meta charset="utf-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <title>lovee</title>\n    <meta name="description" content="">\n    <meta name="viewport" content="width=device-width">\n    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n    <link href="' + prefix + 'example/styles/index.css" rel="stylesheet">\n  </head>\n  <style>\n  body{\n    font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;\n    line-height: 1.65;\n    -webkit-font-smoothing: antialiased;\n    background: #fff;\n    color: #34495e;\n  }\n  @media screen and (max-width: 500px) {\n    .gradient-wrap img{\n      width: 100%;\n      height: auto;\n    }\n    .p4{\n      padding: 2rem;\n    }\n  } \n  </style>\n  <body>\n    <div class="container center p2 pt4">\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/wukong.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n          </div>\n          <img src="' + prefix + 'example/images/wukong.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/fulisa.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/fulisa.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/tree.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/tree.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/tree2.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/tree2.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/logo.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/logo.jpg"  alt="" >\n      </div>\n      <div class="gradient-wrap origin p4 mb2 mr1 inline-block" >\n          <div class="orginBg">\n          </div>\n          <img src="' + prefix + 'example/images/logo1.jpg" data-limit="3"   alt="" >\n      </div>\n      <div class="gradient-wrap hover p4 mb2 mr1 inline-block" >\n          <div class="bg">\n\n          </div>\n          <img src="' + prefix + 'example/images/logo1.jpg" data-limit="3"  alt="" >\n      </div>\n\n    </div>\n  </body>\n  <script src="' + prefix + 'dist/loveeImage.js"></script>\n  <script src="' + prefix + 'dist/loveeSvg.js"></script>\n  <script src="' + prefix + 'dist/loveeCanvas.js"></script>\n  <script src="' + prefix + 'dist/lovee.js"></script>\n  <script>\n    ' + generate(option) + '\n  </script>\n  </html>\n  ';
 };
 
 /***/ },

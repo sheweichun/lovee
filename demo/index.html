@@ -17,12 +17,21 @@ body{
   background: #fff;
   color: #34495e;
 }
+@media screen and (max-width: 500px) {
+  .gradient-wrap img{
+    width: 100%;
+    height: auto;
+  }
+  .p4{
+    padding: 2rem;
+  }
+}
 </style>
 <script>
   window.PREFIX = '/lovee/'
 </script>
 <body>
-  <div class="container center p2 pt4">
+  <div class="container center p2 pt4" style="max-width: 1361px;">
       <h1 class="mb1"><img style="width: 120px;" src="../images/logo.png"/></h1>
         <a class="github-button" href="https://github.com/sheweichun/lovee" data-icon="octicon-star" data-style="mega" data-count-href="/sheweichun/lovee/stargazers" data-count-api="/repos/sheweichun/lovee#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sheweichun/lovee on GitHub">Star</a>
       <h3 class="h3 mb4 max-width-3 mx-auto">This JavaScript library produces complementary background generated from supplied images.</h3>
