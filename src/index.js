@@ -3,7 +3,7 @@
 import {getHtmlElement, getAttribute} from './util';
 import Lovee from './lovee';
 const merge = (...objarr) => {
-    return objarr.reduceRight((ret, obj) => {
+    return objarr.reduce((ret, obj) => {
       for (let attr in obj) {
         ret[attr] = obj[attr];
       }
