@@ -111,14 +111,10 @@ module.exports = {
 
         // apply these rule even if rules are overridden (advanced option)
 
-        loader: 'babel-loader',
+        loader: 'babel-loader'
         // the loader which should be applied, it'll be resolve relative to the context
         // -loader suffix is no longer optional in Webpack 2 for clarity reasons
         // see webpack 1 upgrade guide
-
-        options: {
-          presets: ['es2015']
-        },
         // options for the loader
       },
       {
@@ -150,7 +146,9 @@ module.exports = {
 
     alias: {
       // a list of module name aliases
-
+      'util': path.resolve(__dirname, './src/util'),
+      'element': path.resolve(__dirname, './src/element'),
+      'core': path.resolve(__dirname, './src/core'),
       // alias "only-module" -> "new-module", but not "module/path/file" -> "new-module/path/file"
     },
     /* alternative alias syntax (click to show) */
