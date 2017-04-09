@@ -82,6 +82,7 @@ export default class EventHanlde {
   }
   handlerClick(e) {
     this.trigger('onClick', e, (entity, point) => {
+      console.log('clicked');
       if (entity.dragPoint) {
         let flag = entity.dragPoint.flag;
         entity.dragPoint = null;
@@ -102,13 +103,22 @@ export default class EventHanlde {
     });
   }
   handlerMouseUp(e) {
-    this.trigger('onDragging', e, (entity, point) => {
-      if (!entity.onClick) {
-        entity.dragPoint = null;
-      }
+    this.trigger((entity) => {
+      entity.dragPoint = null;
+      return false;
+    }, e, (entity, point) => {
+      console.log('mouseup');
       entity.onDragEnd && entity.onDragEnd(point);
     });
   }
+  // handlerMouseUp(e) {
+  //   this.trigger('onDragging', e, (entity, point) => {
+  //     if (!entity.onClick) {
+  //       entity.dragPoint = null;
+  //     }
+  //     entity.onDragEnd && entity.onDragEnd(point);
+  //   });
+  // }
   destroy() {
     this.canvas.removeEventListener(CLICK, this.handlerClick);
     this.canvas.removeEventListener(MOUSEMOVE, this.handlerMouseMove);
